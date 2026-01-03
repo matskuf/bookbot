@@ -17,6 +17,14 @@ def ch_count(filepath):
     return dict
     
 def sort(dict):
+    
     new_list = []
-    for i in dict:
-        
+    for k, v in dict.items():
+        new_list.append({"char": k, "num": v})
+
+    def sort_on(new_list):
+        return new_list["num"]
+    
+    
+    new_list.sort(reverse=True, key=sort_on)
+    return(new_list)
